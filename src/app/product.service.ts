@@ -6,11 +6,11 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  _albumUrl = '../assets/album.json';
+  private _albumUrl = '../assets/album.json';
 
   constructor(private _http: HttpClient) { }
 
-  getAlbumInfo(id: number): Observable<AlbumArtist> {
+  getAlbum(id: number): Observable<AlbumArtist> {
     return this._http.get<AlbumArtist>(this._albumUrl).pipe(
       map((albumArtist) => albumArtist
     ));
