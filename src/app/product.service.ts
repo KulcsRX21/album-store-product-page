@@ -1,6 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { AlbumArtist } from './albumArtist';
 
 @Injectable({
   providedIn: 'root'
@@ -15,24 +16,4 @@ export class ProductService {
       map((albumArtist) => albumArtist
     ));
   }
-}
-
-export interface AlbumArtist {
-  id: number,
-  artist: string,
-  album: Album
-}
-
-export interface Album {
-  name: string,
-  releaseDate: Date,
-  coverImage: string,
-  tracks: Track[]
-}
-
-export interface Track {
-  trackNumber: number,
-  trackName: string,
-  trackLength: string,
-  trackPrice: number
 }
